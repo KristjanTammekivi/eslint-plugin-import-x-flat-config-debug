@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "Node",
+        "module": "CommonJS",
+        "lib": ["ES2022"],
+        "outDir": "dist",
+        "strict": true
+    }
+}

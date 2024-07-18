@@ -1,0 +1,16 @@
+{
+  "name": "flat-import",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "lint-debug": "DEBUG='eslint:*' eslint src/**/*.ts"
+  },
+  "devDependencies": {
+    "eslint": "^9.7.0",
+    "eslint-plugin-import-x": "^3.0.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1"
+  }
+}
