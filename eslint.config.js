@@ -16,6 +16,7 @@ module.exports = tseslint.config(
         },
         files: ['src/*.ts'],
         rules: {
+            'import/order': "error",
             'import/no-unused-modules': ['error', { unusedExports: true, missingExports: false }],
         }
     }
