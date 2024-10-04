@@ -1,23 +1,27 @@
-const tseslint = require('typescript-eslint');
-const importPlugin = require('eslint-plugin-import-x');
+const importPlugin = require('eslint-plugin-import');
+const js = require('@eslint/js');
+const tsParser = require('@typescript-eslint/parser');
 
-module.exports = tseslint.config(
+module.exports = [
+    importPlugin.flatConfigs.react,
     {
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+        ...importPlugin.flatConfigs.recommended,
+        ...importPlugin.flatConfigs.typescript,
         languageOptions: {
-            parser: tseslint.parser,
-            parserOptions: {
-                project: true
-            }
-        }
+            parser: tsParser,
+            ecmaVersion: 'latest',
+            sourceType: 'commonjs',
+        },
     },
     {
-        plugins: {
-            import: importPlugin
+        languageOptions: {
+            parser: tsParser,
+            ecmaVersion: 'latest',
+            sourceType: 'commonjs',
         },
-        files: ['src/*.ts'],
         rules: {
-            'import/order': "error",
-            'import/no-unused-modules': ['error', { unusedExports: true, missingExports: false }],
-        }
-    }
-)
+            'import/no-unused-modules': ['error', { unusedExports: true }],
+        },
+    },
+];

@@ -1,6 +1,6 @@
 # Purpose
 
-This is to demonstrate eslint-plugin-import error with unusedExports: true
+This is to demonstrate eslint-plugin-import / eslint-plugin-import-x error with unusedExports: true
 
 This will fail
 
@@ -28,4 +28,6 @@ yarn run lint
 
 ```
 
-When removing `import/no-unused-modules` from eslint.config.js (or removing it's options) it will work
+When removing `import/no-unused-modules` from eslint.config.js (or removing it's options) it will work.
+
+Apparently also starts working after adding .eslintrc https://github.com/import-js/eslint-plugin-import/issues/3079
